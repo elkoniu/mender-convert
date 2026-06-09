@@ -84,8 +84,8 @@ variables:
   DOCKER_TLS_CERTDIR: "/certs"
 
   # Ubuntu distribution to use in test_acceptance jobs
-  # Jammy Jellyfish is Ubuntu 22.04
-  ACC_TESTS_UBUNTU_DISTRO: "jammy"
+  # Resolute Raccoon is Ubuntu 26.04
+  ACC_TESTS_UBUNTU_DISTRO: "resolute"
 
 include:
   - project: Northern.tech/Mender/mendertesting
@@ -156,7 +156,7 @@ build:docker-multiplatform:
   needs:
     - job: build:docker-multiplatform
       artifacts: false
-  image: ubuntu:22.04
+  image: ubuntu:26.04
   services:
     - docker:dind
   tags:
